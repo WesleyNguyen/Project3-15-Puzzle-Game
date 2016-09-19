@@ -7,3 +7,21 @@
  *  File Name: fifteen.css
  *  Purpose: This is the stylesheet for fifteen.html
 */
+
+body {
+    font-family: Zapf Chancery, cursive;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+button {
+    margin: auto;
+    display: block;
+    font-family: Zapf Chancery, cursive;
+}
