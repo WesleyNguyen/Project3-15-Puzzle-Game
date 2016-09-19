@@ -7,3 +7,9 @@
  *  File Name: fifteen.css
  *  Purpose: This is the stylesheet for fifteen.html
 */
+
+body{
+	text-align: center;
+	font-family: cursive;
+	font-size: 14pt;
+}
