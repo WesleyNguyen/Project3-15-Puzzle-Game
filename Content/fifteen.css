@@ -27,7 +27,7 @@ button {
     font-family: Zapf Chancery, cursive;
 }
 
-div {
+.tile {
     height: 90px;
     width: 90px;
     vertical-align: middle;
@@ -37,6 +37,16 @@ div {
     border-color: black;
     display: inline-block;
     background-image: url("./Images/background.jpg");
+}
+
+.tile:hover {
+    color: red;
+    border-color: red;
+}
+
+.tile p {
+    margin: 0;
+    font-size: 40px;
 }
 
 #one {
@@ -86,20 +96,12 @@ div {
     background-position: -200px -300px;
 }
 
-
-
-div p{
-    margin: 0;
-    font-size: 40px;
-}
-
 .tileSection {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 15px;
     width: 400px;
     height: 400px;
-    border: none;
     display: block;
     
    
