@@ -8,6 +8,7 @@
  *  Purpose: This is the stylesheet for fifteen.html
 */
 
+<<<<<<< HEAD
 body {
     font-family: Zapf Chancery, cursive;
 }
@@ -57,3 +58,10 @@ div p{
     
 }
 
+=======
+body{
+	text-align: center;
+	font-family: cursive;
+	font-size: 14pt;
+}
+>>>>>>> origin/Harambabe
