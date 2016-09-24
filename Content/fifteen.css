@@ -1,15 +1,143 @@
 /*
  *	Group Name: The Average Joes
  *	Group Members: Bruce Li (Leader)
- *				   Matt Irby
+ *				   Matthew H. Irby
  *			       Wesley Nguyen
  *			       Zachary Gay
  *  File Name: fifteen.css
  *  Purpose: This is the stylesheet for fifteen.html
 */
 
-body{
-	text-align: center;
-	font-family: cursive;
-	font-size: 14pt;
+body {
+    font-family: Zapf Chancery, cursive;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    font-family: Zapf Chancery, cursive;
+    text-align: center;
+
+}
+
+button {
+    margin: auto;
+    display: block;
+    font-family: Zapf Chancery, cursive;
+}
+
+.tile {
+    height: 90px;
+    width: 90px;
+    vertical-align: middle;
+    line-height: 90px;
+    border: 5px;
+    border-style: solid;
+    border-color: black;
+    display: inline-block;
+    position: absolute;
+    background-image: url("./Images/background.jpg");
+}
+
+.tile:hover {
+    color: red;
+    border-color: red;
+}
+
+.tile p {
+    margin: 0;
+    font-size: 40px;
+    
+}
+
+#one {
+    background-position: 0px 0px;
+    left: 0px;
+    top: 0px;
+}
+
+#two {
+    background-position: -100px 0px;
+    left: 100px;
+    top: 0px;
+}
+#three {
+    background-position: -200px 0px;
+    left: 200px;
+    top: 0px;
+}
+#four {
+    background-position: -300px 0px;
+    left: 300px;
+    top: 0px;
+}
+#five {
+    background-position: 0px -100px;
+    left: 0px;
+    top: 100px;
+}
+#six {
+    background-position: -100px -100px;
+    left: 100px;
+    top: 100px;
+}
+#seven {
+    background-position: -200px -100px;
+    left: 200px;
+    top: 100px;
+}
+#eight {
+    background-position: -300px -100px;
+    left: 300px;
+    top: 100px;
+}
+#nine {
+    background-position: 0px -200px;
+    left: 0px;
+    top: 200px;
+}
+#ten {
+    background-position: -100px -200px;
+    left: 100px;
+    top: 200px;
+}
+#eleven {
+    background-position: -200px -200px;
+    left: 200px;
+    top: 200px;
+}
+#twelve {
+    background-position: -300px -200px;
+    left: 300px;
+    top: 200px;
+}
+#thirteen {
+    background-position: 0px -300px;
+    left: 0px;
+    top: 300px;
+}
+#fourteen {
+    background-position: -100px -300px;
+    left: 100px;
+    top: 300px;
+}
+#fifteen {
+    background-position: -200px -300px;
+    left: 200px;
+    top: 300px;
+}
+
+.tileSection {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    width: 400px;
+    height: 400px;
+    display: block;
+    position: relative;
+    
+   
+    
 }
