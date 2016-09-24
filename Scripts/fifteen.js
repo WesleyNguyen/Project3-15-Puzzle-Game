@@ -4,5 +4,8 @@
 //  Purpose: This is the javascript file fifteen.html's puzzle piece movement.
 */
 
+function moveTile(){
+	alert("here");
+}
 
-document.getElementsByClassName("tileSelection").addEventListener;
+document.getElementByClassName("tile").addEventListener("click", moveTile);
