@@ -41,7 +41,12 @@ button {
     background-image: url("./Images/background.jpg");
 }
 
-.tile:hover {
+/* .tile:hover {
+    color: red;
+    border-color: red;
+} */
+
+.redHighlight {
     color: red;
     border-color: red;
 }
