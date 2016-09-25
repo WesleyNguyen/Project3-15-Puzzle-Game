@@ -88,24 +88,28 @@ document.getElementById("fifteen").onclick = move;
 function moveTileRight(x) {
     var left = parseInt(x.style.left) + 100;
     x.style.left = left + "px";
+    blankLeft -= 100;
 }
 
 function moveTileLeft(x) {
     var left = parseInt(x.style.left) - 100;
     x.style.left = left + "px";
+    blankLeft += 100;
 }
 
 function moveTileUp(x) {
     var top = parseInt(x.style.top) - 100;
     x.style.top = top + "px";
+    blankTop += 100;
 }
 
 function moveTileDown(x) {
     var top = parseInt(x.style.top) + 100;
     x.style.top = top + "px";
+    blankTop -= 100;
 }
 
-function neighborTop() {
+function neighborBottom(x) {
 
     if ((((parseInt(x.style.top, 10) + 100) === blankTop)) && (parseInt(x.style.left, 10) === blankLeft)) {
         return true;
@@ -114,7 +118,7 @@ function neighborTop() {
     }
 }
 
-function neighborBottom(x) {
+function neighborTop(x) {
 
     if ((((parseInt(x.style.top, 10) - 100) === blankTop)) && (parseInt(x.style.left, 10) === blankLeft)) {
         return true;
@@ -123,7 +127,7 @@ function neighborBottom(x) {
     }
 }
 
-function neighborLeft() {
+function neighborLeft(x) {
 
     if ((((parseInt(x.style.left, 10) - 100) === blankLeft)) && (parseInt(x.style.top, 10) === blankTop)) {
         return true;
@@ -150,11 +154,16 @@ function isNeighbor() {
 
 
 function move() {
-    if (neighborRight(this)) {
-        moveTileRight(this);
-    } else if (neighborTop(this)) {
+    if (neighborBottom(this)) {
         moveTileDown(this);
+    } else if (neighborRight(this)) {
+        moveTileRight(this);
+    } else if (neighborLeft(this)) {
+        moveTileLeft(this);
+    } else if (neighborTop(this)) {
+        moveTileUp(this);
     }
+    
 }
 
 //
