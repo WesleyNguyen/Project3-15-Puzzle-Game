@@ -174,8 +174,8 @@ function neighborRight(x) {
     }
 }
 
-function isNeighbor() {
-    if (neighborBottom || neighborLeft || neighborRight || neighborTop) {
+function isNeighbor(x) {
+    if (neighborBottom(x) || neighborLeft(x) || neighborRight(x) || neighborTop(x)) {
         return true;
     } else {
         return false;
@@ -183,17 +183,16 @@ function isNeighbor() {
 }
 
 
-var highlight = function(){
-	if (isNeighbor()){
-		var x = document.getElementById(this.id);
-		x.addClass("redHighlight");
-	}
+function highlight() {
+	if (isNeighbor(this)) {
+        this.className += " redHighlight";
+    }
+
 }
 
-var unhighlight = function(){
-	if (isNeighbor()){
-		var x = document.getElementById(this.id);
-		x.removeClass("redHighlight");
+function unhighlight() { 
+	if (isNeighbor(this)){
+		this.className = "tile";
 	}
 }
 
