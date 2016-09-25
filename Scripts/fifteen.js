@@ -115,61 +115,60 @@ document.getElementById("fifteen").onmouseover = highlight;
 document.getElementById("fifteen").onmouseout = unhighlight;
 document.getElementById("fifteen").onclick = move;
 
-var moveTileRight = function () {
-    var left = parseInt(this.style.left) + 100;
-    this.style.left = left + "px";
-};
+function moveTileRight(x) {
+    var left = parseInt(x.style.left) + 100;
+    x.style.left = left + "px";
+}
 
-var moveTileLeft = function () {
-    var left = parseInt(this.style.left) - 100;
-    this.style.left = left + "px";
-};
+function moveTileLeft(x) {
+    var left = parseInt(x.style.left) - 100;
+    x.style.left = left + "px";
+}
 
-var moveTileUp = function () {
-    var top = parseInt(this.style.top) - 100;
-    this.style.top = top + "px";
-};
+function moveTileUp(x) {
+    var top = parseInt(x.style.top) - 100;
+    x.style.top = top + "px";
+}
 
-var moveTileDown = function () {
-    var top = parseInt(this.style.top) + 100;
-    this.style.top = top + "px";
-};
+function moveTileDown(x) {
+    var top = parseInt(x.style.top) + 100;
+    x.style.top = top + "px";
+}
 
-var neighborTop = function () {
-    'use strict';
-    if ((((parseInt(this.style.top, 10) + 100) === blankTop)) && (parseInt(this.style.left, 10) === blankLeft)) {
+function neighborTop() {
+
+    if ((((parseInt(x.style.top, 10) + 100) === blankTop)) && (parseInt(x.style.left, 10) === blankLeft)) {
         return true;
     } else {
         return false;
     }
-};
+}
 
-var neighborBottom = function () {
-    'use strict';
-    if ((((parseInt(this.style.top, 10) - 100) === blankTop)) && (parseInt(this.style.left, 10) === blankLeft)) {
+function neighborBottom(x) {
+
+    if ((((parseInt(x.style.top, 10) - 100) === blankTop)) && (parseInt(x.style.left, 10) === blankLeft)) {
         return true;
     } else {
         return false;
     }
-};
+}
 
-var neighborLeft = function () {
-    'use strict';
-    if ((((parseInt(this.style.left, 10) - 100) === blankLeft)) && (parseInt(this.style.top, 10) === blankTop)) {
+function neighborLeft() {
+
+    if ((((parseInt(x.style.left, 10) - 100) === blankLeft)) && (parseInt(x.style.top, 10) === blankTop)) {
         return true;
     } else {
         return false;
     }
-};
+}
 
-var neighborRight = function () {
-    'use strict';
-    if ((((parseInt(this.style.left, 10) + 100) === blankLeft)) && (parseInt(this.style.top, 10) === blankTop)) {
+function neighborRight(x) {
+    if ((((parseInt(x.style.left, 10) + 100) === blankLeft)) && (parseInt(x.style.top, 10) === blankTop)) {
         return true;
     } else {
         return false;
     }
-};
+}
 
 function isNeighbor() {
     if (neighborBottom || neighborLeft || neighborRight || neighborTop) {
@@ -178,6 +177,7 @@ function isNeighbor() {
         return false;
     }
 }
+
 
 var highlight = function(){
 	if (isNeighbor()){
@@ -193,17 +193,26 @@ var unhighlight = function(){
 	}
 }
 
-var move = function () {
-    if (neighborBottom) {
-        moveTileDown();
-    } else if (neighborLeft) {
-        moveTileLeft();
-    } else if (neighborRight) {
-        moveTileRight();
-    } else if (neighborTop) {
-        moveTileUp();
+function move() {
+    if (neighborRight(this)) {
+        moveTileRight(this);
+    } else if (neighborTop(this)) {
+        moveTileDown(this);
     }
-};
+}
+
+//
+//var move = function () {
+//    if (neighborBottom) {
+//        moveTileDown();
+//    } else if (neighborLeft) {
+//        moveTileLeft();
+//    } else if (neighborRight) {
+//        moveTileRight();
+//    } else if (neighborTop) {
+//        moveTileUp();
+//    }
+//};
 
 
 //topPos
