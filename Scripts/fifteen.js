@@ -6,3 +6,11 @@
 
 
 document.getElementsByClassName("tileSelection").addEventListener;
+
+
+
+function moveTile() {
+    var x = document.getElementById("fifteen");
+    x.style.left = "300px";
+    
+}
