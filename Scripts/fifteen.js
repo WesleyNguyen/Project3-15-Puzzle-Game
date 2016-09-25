@@ -218,6 +218,7 @@ function shuffle(){
 	});
 }
 
+
 //
 //var move = function () {
 //    if (neighborBottom) {
@@ -239,4 +240,8 @@ function shuffle(){
 //left - 100 = leftPos && top = topPos //to the left of blank
 //
 //top - 100 = topPos && left = leftPos //on bottom of blank
+
 //left + 100 = leftPos && top = topPos //to the right of blank
+
+//left + 100 = leftPos && top = topPos //to the right of blank
+
