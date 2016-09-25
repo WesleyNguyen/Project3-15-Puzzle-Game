@@ -4,7 +4,11 @@
 //  Purpose: This is the javascript file fifteen.html's puzzle piece movement.
 */
 
-document.getElementsByClassName("tileSection").addEventListener;
+//holds the top and left coordinate of the blank spot
+
+
+var blankTop = 300;
+var blankLeft = 300;
 
 document.getElementById("one").style.backgroundPosition = "0px 0px";
 document.getElementById("one").style.left = "0px";
@@ -81,27 +85,88 @@ document.getElementById("fifteen").style.left = "200px";
 document.getElementById("fifteen").style.top = "300px";
 document.getElementById("fifteen").onclick = move;
 
-function moveTileRight() {
-    var x = document.getElementById("fifteen");
-    var left = parseInt(x.style.left) + 100;
-    x.style.left = left + "px";
+var moveTileRight = function () {
+    var left = parseInt(this.style.left) + 100;
+    this.style.left = left + "px";
+};
+
+var moveTileLeft = function () {
+    var left = parseInt(this.style.left) - 100;
+    this.style.left = left + "px";
+};
+
+var moveTileUp = function () {
+    var top = parseInt(this.style.top) - 100;
+    this.style.top = top + "px";
+};
+
+var moveTileDown = function () {
+    var top = parseInt(this.style.top) + 100;
+    this.style.top = top + "px";
+};
+
+var neighborTop = function () {
+    'use strict';
+    if ((((parseInt(this.style.top, 10) + 100) === blankTop)) && (parseInt(this.style.left, 10) === blankLeft)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+var neighborBottom = function () {
+    'use strict';
+    if ((((parseInt(this.style.top, 10) - 100) === blankTop)) && (parseInt(this.style.left, 10) === blankLeft)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+var neighborLeft = function () {
+    'use strict';
+    if ((((parseInt(this.style.left, 10) - 100) === blankLeft)) && (parseInt(this.style.top, 10) === blankTop)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+var neighborRight = function () {
+    'use strict';
+    if ((((parseInt(this.style.left, 10) + 100) === blankLeft)) && (parseInt(this.style.top, 10) === blankTop)) {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+function isNeighbor() {
+    if (neighborBottom || neighborLeft || neighborRight || neighborTop) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-function moveTileLeft() {
-    var x = document.getElementById("fifteen");
-    var left = parseInt(x.style.left) - 100;
-    x.style.left = left + "px";
-}
+var move = function () {
+    if (neighborBottom) {
+        moveTileDown();
+    } else if (neighborLeft) {
+        moveTileLeft();
+    } else if (neighborRight) {
+        moveTileRight();
+    } else if (neighborTop) {
+        moveTileUp();
+    }
+};
 
-function moveTileUp() {
-    var x = document.getElementById("fifteen");
-    var top = parseInt(x.style.top) - 100;
-    x.style.top = top + "px";
-}
 
-function moveTileDown() {
-    var x = document.getElementById("twelve");
-    var top = parseInt(x.style.top) + 100;
-    x.style.top = top + "px";
-}
-
+//topPos
+//leftPos
+//
+//top + 100 = topPos && left = leftPos //on top of blank
+//left - 100 = leftPos && top = topPos //to the left of blank
+//
+//top - 100 = topPos && left = leftPos //on bottom of blank
+//left + 100 = leftPos && top = topPos //to the right of blank
