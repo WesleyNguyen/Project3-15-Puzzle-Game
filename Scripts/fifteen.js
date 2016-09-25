@@ -210,7 +210,12 @@ function move() {
 }
 
 function shuffle(){
-	
+	var moves = 0;
+	var interval = setInterval(function(){
+		if(moves<100){
+			
+		}
+	});
 }
 
 //
