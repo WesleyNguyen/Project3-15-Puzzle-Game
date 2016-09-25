@@ -6,7 +6,7 @@ Group Name: The Average Joes
 
 Group Members:
 Bruce Li (Leader)
-Matt Irby
+Matthew H. Irby
 Wesley Nguyen
 Zachary Gay
 

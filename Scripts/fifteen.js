@@ -209,6 +209,16 @@ function move() {
     
 }
 
+function shuffle(){
+	var moves = 0;
+	var interval = setInterval(function(){
+		if(moves<100){
+			
+		}
+	});
+}
+
+
 //
 //var move = function () {
 //    if (neighborBottom) {
@@ -230,4 +240,8 @@ function move() {
 //left - 100 = leftPos && top = topPos //to the left of blank
 //
 //top - 100 = topPos && left = leftPos //on bottom of blank
+
 //left + 100 = leftPos && top = topPos //to the right of blank
+
+//left + 100 = leftPos && top = topPos //to the right of blank
+
