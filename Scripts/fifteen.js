@@ -211,8 +211,7 @@ function move() {
     
 }
 
-<<<<<<< HEAD
-=======
+
 function moveTile(x){
 	if (neighborBottom(x)) {
 		moveTileDown(x);
@@ -328,4 +327,4 @@ function checkTile(x){
 
 //left + 100 = leftPos && top = topPos //to the right of blank
 
->>>>>>> master
+
