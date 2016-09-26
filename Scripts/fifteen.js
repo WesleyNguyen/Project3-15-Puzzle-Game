@@ -10,6 +10,46 @@
 var blankTop = 300;
 var blankLeft = 300;
 
+//Setting class value to "tileSection" and "tile"
+document.getElementsByTagName("div")[0].setAttribute("class", "tileSection");
+document.getElementsByTagName("div")[1].setAttribute("class", "tile");
+document.getElementsByTagName("div")[2].setAttribute("class", "tile");
+document.getElementsByTagName("div")[3].setAttribute("class", "tile");
+document.getElementsByTagName("div")[4].setAttribute("class", "tile");
+document.getElementsByTagName("div")[5].setAttribute("class", "tile");
+document.getElementsByTagName("div")[6].setAttribute("class", "tile");
+document.getElementsByTagName("div")[7].setAttribute("class", "tile");
+document.getElementsByTagName("div")[8].setAttribute("class", "tile");
+document.getElementsByTagName("div")[9].setAttribute("class", "tile");
+document.getElementsByTagName("div")[10].setAttribute("class", "tile");
+document.getElementsByTagName("div")[11].setAttribute("class", "tile");
+document.getElementsByTagName("div")[12].setAttribute("class", "tile");
+document.getElementsByTagName("div")[13].setAttribute("class", "tile");
+document.getElementsByTagName("div")[14].setAttribute("class", "tile");
+document.getElementsByTagName("div")[15].setAttribute("class", "tile");
+
+//Setting id value to numbers ranging between one and fifteen inclusive
+// We skip over 0 because tileSection doesn't need id
+document.getElementsByTagName("div")[0].setAttribute("id", "one"); 
+document.getElementsByTagName("div")[1].setAttribute("id", "one");
+document.getElementsByTagName("div")[2].setAttribute("id", "two");
+document.getElementsByTagName("div")[3].setAttribute("id", "three");
+document.getElementsByTagName("div")[4].setAttribute("id", "four");
+document.getElementsByTagName("div")[5].setAttribute("id", "five");
+document.getElementsByTagName("div")[6].setAttribute("id", "six");
+document.getElementsByTagName("div")[7].setAttribute("id", "seven");
+document.getElementsByTagName("div")[8].setAttribute("id", "eight");
+document.getElementsByTagName("div")[9].setAttribute("id", "nine");
+document.getElementsByTagName("div")[10].setAttribute("id", "ten");
+document.getElementsByTagName("div")[11].setAttribute("id", "eleven");
+document.getElementsByTagName("div")[12].setAttribute("id", "twelve");
+document.getElementsByTagName("div")[13].setAttribute("id", "thirteen");
+document.getElementsByTagName("div")[14].setAttribute("id", "fourteen");
+document.getElementsByTagName("div")[15].setAttribute("id", "fifteen");
+
+//Giving the button an id of "shuffle"
+document.getElementsByTagName("button")[0].setAttribute("id", "shuffle");
+
 document.getElementById("one").style.backgroundPosition = "0px 0px";
 document.getElementById("one").style.left = "0px";
 document.getElementById("one").style.top = "0px";
@@ -211,8 +251,6 @@ function move() {
     
 }
 
-<<<<<<< HEAD
-=======
 function moveTile(x){
 	if (neighborBottom(x)) {
 		moveTileDown(x);
@@ -300,32 +338,3 @@ function checkTile(x){
 	return false;
 	}
 }
-
-
-//
-//var move = function () {
-//    if (neighborBottom) {
-//        moveTileDown();
-//    } else if (neighborLeft) {
-//        moveTileLeft();
-//    } else if (neighborRight) {
-//        moveTileRight();
-//    } else if (neighborTop) {
-//        moveTileUp();
-//    }
-//};
-
-
-//topPos
-//leftPos
-//
-//top + 100 = topPos && left = leftPos //on top of blank
-//left - 100 = leftPos && top = topPos //to the left of blank
-//
-//top - 100 = topPos && left = leftPos //on bottom of blank
-
-//left + 100 = leftPos && top = topPos //to the right of blank
-
-//left + 100 = leftPos && top = topPos //to the right of blank
-
->>>>>>> master
