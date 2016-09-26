@@ -209,25 +209,3 @@ function move() {
     
 }
 
-//
-//var move = function () {
-//    if (neighborBottom) {
-//        moveTileDown();
-//    } else if (neighborLeft) {
-//        moveTileLeft();
-//    } else if (neighborRight) {
-//        moveTileRight();
-//    } else if (neighborTop) {
-//        moveTileUp();
-//    }
-//};
-
-
-//topPos
-//leftPos
-//
-//top + 100 = topPos && left = leftPos //on top of blank
-//left - 100 = leftPos && top = topPos //to the left of blank
-//
-//top - 100 = topPos && left = leftPos //on bottom of blank
-//left + 100 = leftPos && top = topPos //to the right of blank
