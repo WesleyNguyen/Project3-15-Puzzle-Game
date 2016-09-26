@@ -10,6 +10,46 @@
 var blankTop = 300;
 var blankLeft = 300;
 
+//Setting class value to "tileSection" and "tile"
+document.getElementsByTagName("div")[0].setAttribute("class", "tileSection");
+document.getElementsByTagName("div")[1].setAttribute("class", "tile");
+document.getElementsByTagName("div")[2].setAttribute("class", "tile");
+document.getElementsByTagName("div")[3].setAttribute("class", "tile");
+document.getElementsByTagName("div")[4].setAttribute("class", "tile");
+document.getElementsByTagName("div")[5].setAttribute("class", "tile");
+document.getElementsByTagName("div")[6].setAttribute("class", "tile");
+document.getElementsByTagName("div")[7].setAttribute("class", "tile");
+document.getElementsByTagName("div")[8].setAttribute("class", "tile");
+document.getElementsByTagName("div")[9].setAttribute("class", "tile");
+document.getElementsByTagName("div")[10].setAttribute("class", "tile");
+document.getElementsByTagName("div")[11].setAttribute("class", "tile");
+document.getElementsByTagName("div")[12].setAttribute("class", "tile");
+document.getElementsByTagName("div")[13].setAttribute("class", "tile");
+document.getElementsByTagName("div")[14].setAttribute("class", "tile");
+document.getElementsByTagName("div")[15].setAttribute("class", "tile");
+
+//Setting id value to numbers ranging between one and fifteen inclusive
+//document.getElementsByTagName("div")[0].setAttribute("id", "one"); We skip over 0 because tileSection doesn't need id
+document.getElementsByTagName("div")[1].setAttribute("id", "one");
+document.getElementsByTagName("div")[2].setAttribute("id", "two");
+document.getElementsByTagName("div")[3].setAttribute("id", "three");
+document.getElementsByTagName("div")[4].setAttribute("id", "four");
+document.getElementsByTagName("div")[5].setAttribute("id", "five");
+document.getElementsByTagName("div")[6].setAttribute("id", "six");
+document.getElementsByTagName("div")[7].setAttribute("id", "seven");
+document.getElementsByTagName("div")[8].setAttribute("id", "eight");
+document.getElementsByTagName("div")[9].setAttribute("id", "nine");
+document.getElementsByTagName("div")[10].setAttribute("id", "ten");
+document.getElementsByTagName("div")[11].setAttribute("id", "eleven");
+document.getElementsByTagName("div")[12].setAttribute("id", "twelve");
+document.getElementsByTagName("div")[13].setAttribute("id", "thirteen");
+document.getElementsByTagName("div")[14].setAttribute("id", "fourteen");
+document.getElementsByTagName("div")[15].setAttribute("id", "fifteen");
+
+//Giving the button an id of "shuffle"
+document.getElementsByTagName("button")[0].setAttribute("id", "shuffle");
+
+//Rearranging the board in its initial state
 document.getElementById("one").style.backgroundPosition = "0px 0px";
 document.getElementById("one").style.left = "0px";
 document.getElementById("one").style.top = "0px";
@@ -115,8 +155,10 @@ document.getElementById("fifteen").onmouseover = highlight;
 document.getElementById("fifteen").onmouseout = unhighlight;
 document.getElementById("fifteen").onclick = move;
 
+//Adding an event listener -- when clicked, the board will shuffle all the pieces around
 document.getElementById("shuffle").onclick = shuffle;
 
+//Functions that move the tiles to an empty space. black<direction>'s location is exchanged with the tile that was swapped
 function moveTileRight(x) {
     var left = parseInt(x.style.left) + 100;
     x.style.left = left + "px";
@@ -141,6 +183,7 @@ function moveTileDown(x) {
     blankTop -= 100;
 }
 
+//Boolean values that checks to see if the neighboring square(s) are empty
 function neighborBottom(x) {
 
     if ((((parseInt(x.style.top, 10) + 100) === blankTop)) && (parseInt(x.style.left, 10) === blankLeft)) {
@@ -176,6 +219,7 @@ function neighborRight(x) {
     }
 }
 
+//Checks to see if the tile is a neighbor at all
 function isNeighbor(x) {
     if (neighborBottom(x) || neighborLeft(x) || neighborRight(x) || neighborTop(x)) {
         return true;
@@ -184,7 +228,7 @@ function isNeighbor(x) {
     }
 }
 
-
+//When mouse hovers over square, it'll light up and make it red
 function highlight() {
 	if (isNeighbor(this)) {
         this.className += " redHighlight";
@@ -192,12 +236,14 @@ function highlight() {
 
 }
 
+//When mouse stops hovering over a square, it'll stop lighting up
 function unhighlight() { 
 	if (isNeighbor(this)){
 		this.className = "tile";
 	}
 }
 
+//Calls the move functions, which will move the tiles accordingly
 function move() {
     if (neighborBottom(this)) {
         moveTileDown(this);
@@ -211,6 +257,7 @@ function move() {
     
 }
 
+//Additional move methods to complement the other move method
 function moveTile(x){
 	if (neighborBottom(x)) {
 		moveTileDown(x);
@@ -223,6 +270,7 @@ function moveTile(x){
 	}
 }
 
+//Gets back the tile
 function getTile(x){
 	if(x===0){
 		return document.getElementById("one");
@@ -271,6 +319,7 @@ function getTile(x){
 	}
 }
 
+//Shuffles all the tiles around randomly
 function shuffle(){
 	
 	var randNum = Math.floor(Math.random()*15);
@@ -289,6 +338,7 @@ function shuffle(){
 	
 }
 
+//Checks the tiles to see if it's a tile; this function calls moveTile
 function checkTile(x){
 	if(isNeighbor(x)){
 		moveTile(x)
@@ -298,7 +348,6 @@ function checkTile(x){
 	return false;
 	}
 }
-
 
 //
 //var move = function () {
@@ -325,4 +374,3 @@ function checkTile(x){
 //left + 100 = leftPos && top = topPos //to the right of blank
 
 //left + 100 = leftPos && top = topPos //to the right of blank
-
