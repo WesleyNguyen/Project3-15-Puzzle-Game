@@ -10,6 +10,7 @@
 var blankTop = 300;
 var blankLeft = 300;
 
+
 document.getElementById("one").style.backgroundPosition = "0px 0px";
 document.getElementById("one").style.left = "0px";
 document.getElementById("one").style.top = "0px";
@@ -115,6 +116,8 @@ document.getElementById("fifteen").onmouseover = highlight;
 document.getElementById("fifteen").onmouseout = unhighlight;
 document.getElementById("fifteen").onclick = move;
 
+document.getElementById("shuffle").onclick = shuffle;
+
 function moveTileRight(x) {
     var left = parseInt(x.style.left) + 100;
     x.style.left = left + "px";
@@ -210,14 +213,16 @@ function move() {
 }
 
 function shuffle(){
-	var moves = 0;
-	var interval = setInterval(function(){
-		if(moves<100){
-			
-		}
-	});
+	moveTileRight(document.getElementById("fifteen"));
 }
-
+/*
+function nextTile(x){
+	var randomNum = Math.floor(Math.random()*10);
+	if(randomNum < 3 && x.style){
+		return x.style.
+	}
+}
+*/
 
 //
 //var move = function () {
