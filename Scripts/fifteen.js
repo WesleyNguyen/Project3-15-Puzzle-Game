@@ -115,6 +115,8 @@ document.getElementById("fifteen").onmouseover = highlight;
 document.getElementById("fifteen").onmouseout = unhighlight;
 document.getElementById("fifteen").onclick = move;
 
+document.getElementById("shuffle").onclick = shuffle;
+
 function moveTileRight(x) {
     var left = parseInt(x.style.left) + 100;
     x.style.left = left + "px";
@@ -209,13 +211,92 @@ function move() {
     
 }
 
+function move(x){
+	if (neighborBottom(x)) {
+		moveTileDown(x);
+	} else if (neighborRight(x)) {
+		moveTileRight(x);
+	} else if (neighborLeft(x)) {
+		moveTileLeft(x);
+	} else if (neighborTop(x)) {
+		moveTileUp(x);
+	}
+}
+
+function getTile(x){
+	if(x===0){
+		return document.getElementById("one");
+	}
+	else if(x===1){
+		return document.getElementById("two");
+	}
+	else if(x===2){
+		return document.getElementById("three");
+	}
+	else if(x===3){
+		return document.getElementById("four");
+	}
+	else if(x===4){
+		return document.getElementById("five");
+	}
+	else if(x===5){
+		return document.getElementById("six");
+	}
+	else if(x===6){
+		return document.getElementById("seven");
+	}
+	else if(x===7){
+		return document.getElementById("eight");
+	}
+	else if(x===8){
+		return document.getElementById("nine");
+	}
+	else if(x===9){
+		return document.getElementById("ten");
+	}
+	else if(x===10){
+		return document.getElementById("eleven");
+	}
+	else if(x===11){
+		return document.getElementById("twelve");
+	}
+	else if(x===12){
+		return document.getElementById("thirteen");
+	}
+	else if(x===13){
+		return document.getElementById("fourteen");
+	}
+	else{
+		return document.getElementById("fifteen");
+	}
+}
+
 function shuffle(){
-	var moves = 0;
-	var interval = setInterval(function(){
-		if(moves<100){
-			
+	
+	var randNum = Math.floor(Math.random()*15);
+	var tile = getTile(randNum);
+	
+	var i=0;
+	while(i<100){
+		var randNum = Math.floor(Math.random()*15);
+		var tile = getTile(randNum);
+		if(checkTile(tile)){
+			i++;
 		}
-	});
+	}
+	
+	
+	
+}
+
+function checkTile(x){
+	if(isNeighbor(x)){
+		move(x);
+		return true;
+	}
+	else{
+	return false;
+	}
 }
 
 
