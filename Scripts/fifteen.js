@@ -10,7 +10,6 @@
 var blankTop = 300;
 var blankLeft = 300;
 
-
 document.getElementById("one").style.backgroundPosition = "0px 0px";
 document.getElementById("one").style.left = "0px";
 document.getElementById("one").style.top = "0px";
@@ -212,17 +211,90 @@ function move() {
     
 }
 
-function shuffle(){
-	moveTileRight(document.getElementById("fifteen"));
-}
-/*
-function nextTile(x){
-	var randomNum = Math.floor(Math.random()*10);
-	if(randomNum < 3 && x.style){
-		return x.style.
+function getTile(x){
+	if(x===0){
+		return document.getElementById("one");
+	}
+	else if(x===1){
+		return document.getElementById("two");
+	}
+	else if(x===2){
+		return document.getElementById("three");
+	}
+	else if(x===3){
+		return document.getElementById("four");
+	}
+	else if(x===4){
+		return document.getElementById("five");
+	}
+	else if(x===5){
+		return document.getElementById("six");
+	}
+	else if(x===6){
+		return document.getElementById("seven");
+	}
+	else if(x===7){
+		return document.getElementById("eight");
+	}
+	else if(x===8){
+		return document.getElementById("nine");
+	}
+	else if(x===9){
+		return document.getElementById("ten");
+	}
+	else if(x===10){
+		return document.getElementById("eleven");
+	}
+	else if(x===11){
+		return document.getElementById("twelve");
+	}
+	else if(x===12){
+		return document.getElementById("thirteen");
+	}
+	else if(x===13){
+		return document.getElementById("fourteen");
+	}
+	else{
+		return document.getElementById("fifteen");
 	}
 }
-*/
+
+function shuffle(){
+	
+	var randNum = Math.floor(Math.random()*15);
+	var tile = getTile(randNum);
+	
+	var i=0;
+	while(i<100){
+		var randNum = Math.floor(Math.random()*15);
+		var tile = getTile(randNum);
+		if(checkTile(tile)){
+			i++;
+		}
+	}
+	
+	
+	
+}
+
+function checkTile(x){
+	if(isNeighbor(x)){
+		if (neighborBottom(x)) {
+			moveTileDown(x);
+		} else if (neighborRight(x)) {
+			moveTileRight(x);
+		} else if (neighborLeft(x)) {
+			moveTileLeft(x);
+		} else if (neighborTop(x)) {
+			moveTileUp(x);
+		}
+		return true;
+	}
+	else{
+	return false;
+	}
+}
+
 
 //
 //var move = function () {
