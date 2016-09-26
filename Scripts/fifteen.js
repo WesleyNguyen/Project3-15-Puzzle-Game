@@ -260,14 +260,7 @@ function getTile(x){
 }
 
 function shuffle(){
-	/*
-	var i=0;
-	while(i<100){
-		var randNum = Math.floor(Math.random()*numTile.length);
-		var tile = getTile(numTile[randNum]);
-		moveTileUp(tile);
-	}
-	*/
+	
 	var randNum = Math.floor(Math.random()*15);
 	var tile = getTile(randNum);
 	
@@ -278,7 +271,6 @@ function shuffle(){
 		if(checkTile(tile)){
 			i++;
 		}
-		
 	}
 	
 	
