@@ -211,6 +211,18 @@ function move() {
     
 }
 
+function move(x){
+	if (neighborBottom(x)) {
+		moveTileDown(x);
+	} else if (neighborRight(x)) {
+		moveTileRight(x);
+	} else if (neighborLeft(x)) {
+		moveTileLeft(x);
+	} else if (neighborTop(x)) {
+		moveTileUp(x);
+	}
+}
+
 function getTile(x){
 	if(x===0){
 		return document.getElementById("one");
@@ -279,15 +291,7 @@ function shuffle(){
 
 function checkTile(x){
 	if(isNeighbor(x)){
-		if (neighborBottom(x)) {
-			moveTileDown(x);
-		} else if (neighborRight(x)) {
-			moveTileRight(x);
-		} else if (neighborLeft(x)) {
-			moveTileLeft(x);
-		} else if (neighborTop(x)) {
-			moveTileUp(x);
-		}
+		move(x);
 		return true;
 	}
 	else{
