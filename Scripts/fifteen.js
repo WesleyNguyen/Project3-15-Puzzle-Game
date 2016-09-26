@@ -211,7 +211,7 @@ function move() {
     
 }
 
-function move(x){
+function moveTile(x){
 	if (neighborBottom(x)) {
 		moveTileDown(x);
 	} else if (neighborRight(x)) {
@@ -291,7 +291,7 @@ function shuffle(){
 
 function checkTile(x){
 	if(isNeighbor(x)){
-		move(x);
+		moveTile(x)
 		return true;
 	}
 	else{
